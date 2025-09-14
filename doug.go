@@ -32,6 +32,6 @@ func Provide(constructor any, opts ...dig.ProvideOption) Option {
 }
 
 // Supply adds the value of one or more types to the container.
-func Supply[T any](value T) Option {
-	return Provide(func() T { return value })
+func Supply[T any](value T, opts ...dig.ProvideOption) Option {
+	return Provide(func() T { return value }, opts...)
 }
